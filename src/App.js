@@ -24,22 +24,9 @@ const analytics = getAnalytics(application);
 const db = getDatabase();
 
 function App() {
-
-  //ticket -> ticketnumber -> [user, email, message, status]
+  
   const createNewTicket = () => {
     console.log("Create New Ticket button was clicked.");
-
-    let ticketID = Math.random().toString(36).slice(2);
-
-    set(ref(db, 'tickets/' + ticketID), {
-      username: "Alvin",
-      email: "alvin email",
-      subject: "my subj",
-      description: "My ticket description",
-      status: "Open"
-    });
-
-
   }
 
   return (
@@ -49,7 +36,7 @@ function App() {
           Hello, this is Alvin.
         </p>
         
-        <div><NewTicket/></div>
+        <NewTicket/>
         
         <Button onClick={createNewTicket} onvariant="contained" size="large" startIcon={<AddCircleIcon />} style={{backgroundColor: "#4CAF50", color: "white"}}>Create a new ticket</Button>
         
