@@ -33,7 +33,7 @@ function TicketsList() {
         return { username, email, subject, description, status };
     }
 
-    //table rows to be filled by Firebase DB
+    //table rows to be filled by Firebase DB!
     const rows = [];
     onValue(ticketArrRef, (snapshot) => {
         const data = snapshot.val();
