@@ -8,6 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, set } from "firebase/database";
 
 import NewTicket from "./NewTicket.js";
+import TicketsList from "./TicketsList.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyB6W1H-nXmSRnvmKITBKBxwYmqxtri-Pjc",
@@ -36,7 +37,8 @@ function App() {
           Hello, this is Alvin.
         </p>
         
-        <NewTicket/>
+        <NewTicket/><br></br>
+        <TicketsList/>
         
         <Button onClick={createNewTicket} onvariant="contained" size="large" startIcon={<AddCircleIcon />} style={{backgroundColor: "#4CAF50", color: "white"}}>Create a new ticket</Button>
         

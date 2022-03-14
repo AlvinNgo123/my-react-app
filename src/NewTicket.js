@@ -17,8 +17,9 @@ const firebaseConfig = {
     measurementId: "G-8BS6G0NFNZ"
   };
 
-const application = initializeApp(firebaseConfig);
-const db = getDatabase();
+  const application = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(application);
+  const db = getDatabase();
 
 function NewTicket() {
     //ticket -> ticketnumber -> [user, email, message, status]
