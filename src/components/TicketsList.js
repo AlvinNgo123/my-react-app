@@ -25,6 +25,7 @@ const firebaseConfig = {
   const analytics = getAnalytics(application);
   const db = getDatabase();
 
+//Component that shows all current tickets in db
 function TicketsList() {
 
     let ticketArrRef = ref(db, 'tickets/');

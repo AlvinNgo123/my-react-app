@@ -22,6 +22,7 @@ const firebaseConfig = {
   const analytics = getAnalytics(application);
   const db = getDatabase();
 
+  //New Ticket component
 function NewTicket() {
     //ticket -> ticketnumber -> [user, email, message, status]
     const confirmSubmit = (user, eml, subj, descrip) => {

@@ -5,6 +5,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 import './Main.css';
 
+//Main component for buttons that link out to the other components
 function Main() {
 
   return (
