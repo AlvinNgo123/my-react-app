@@ -25,6 +25,7 @@ const firebaseConfig = {
   const analytics = getAnalytics(application);
   const db = getDatabase();
 
+//Component that shows all current tickets in db
 function TicketsList() {
 
     let ticketArrRef = ref(db, 'tickets/');
@@ -41,7 +42,7 @@ function TicketsList() {
             rows.push(createData(data[id]['username'], data[id]['email'], data[id]['subject'], data[id]['description'], data[id]['status']));
         }
     })
-
+    
     return (
         <div className="TicketsList">
             <div>Tickets List Component</div>
