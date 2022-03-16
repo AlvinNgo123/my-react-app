@@ -1,5 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
+import {BrowserRouter, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
@@ -7,8 +9,10 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, set } from "firebase/database";
 
-import NewTicket from "./NewTicket.js";
-import TicketsList from "./TicketsList.js"
+import NewTicket from "./components/NewTicket";
+import TicketsList from "./components/TicketsList";
+import Main from "./components/Main";
+import Home from "./components/Home";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB6W1H-nXmSRnvmKITBKBxwYmqxtri-Pjc",
@@ -25,26 +29,21 @@ const analytics = getAnalytics(application);
 const db = getDatabase();
 
 function App() {
-  
-  const createNewTicket = () => {
-    console.log("Create New Ticket button was clicked.");
-  }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello, this is Alvin.
-        </p>
-        
-        <NewTicket/><br></br>
-        <TicketsList/>
-        
-        <Button onClick={createNewTicket} onvariant="contained" size="large" startIcon={<AddCircleIcon />} style={{backgroundColor: "#4CAF50", color: "white"}}>Create a new ticket</Button>
-        
-      </header>
-      
-    </div>
+  return (          
+        <Router>
+          <div className="App">
+            <header className="App-header">
+            <p>Hi, I'm Alvin's Tickets.</p>
+            <Main/>
+            <Routes>
+              <Route exact path='/' element={<Home/>}/>
+              <Route exact path='/newticket' element={<NewTicket/>}/>
+              <Route exact path='/ticketslist' element={<TicketsList/>}/>
+            </Routes>
+            </header>
+          </div>
+        </Router> 
   );
 }
 

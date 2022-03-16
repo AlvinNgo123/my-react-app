@@ -41,7 +41,7 @@ function TicketsList() {
             rows.push(createData(data[id]['username'], data[id]['email'], data[id]['subject'], data[id]['description'], data[id]['status']));
         }
     })
-
+    
     return (
         <div className="TicketsList">
             <div>Tickets List Component</div>

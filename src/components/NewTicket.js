@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Input from '@mui/material/Input';
 
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, set } from "firebase/database";
@@ -34,6 +35,13 @@ function NewTicket() {
             description: document.getElementById(descrip).value,
             status: "Open"
         });
+
+        document.getElementById(user).value='';
+        document.getElementById(eml).value='';
+        document.getElementById(subj).value='';
+        document.getElementById(descrip).value='';
+
+        alert("Ticket was submitted successfully!");
     }
 
     return (
